@@ -1,0 +1,53 @@
+/* Hintergrundfarbe der gesamten Seite */
+body {
+    background-color: #323232;
+    font-family: 'Open Sans', sans-serif;
+    color: white; /* Für besseren Kontrast mit der dunklen Hintergrundfarbe */
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container für die Tabelle */
+#content {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 0px; /* Keine Lücken zwischen den Zellen */
+    box-sizing: content-box; /* Die Breite des Rands wird zur Gesamtabmessung der Tabelle addiert */
+}
+
+/* Stil der einzelnen Zellen */
+.cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    font-size: 2rem;
+    border: 5px solid white; /* Weiße Trennlinien */
+    box-sizing: border-box; /* Grenzen korrekt berechnen */
+    cursor: pointer;
+}
+
+/* Entferne die äußeren Rahmen */
+.cell:nth-child(-n+3) { border-top: none; } /* obere Zellen */
+.cell:nth-child(n+7) { border-bottom: none; } /* untere Zellen */
+.cell:nth-child(3n+1) { border-left: none; } /* linke Zellen */
+.cell:nth-child(3n) { border-right: none; } /* rechte Zellen */
+
+/* Farbe für X und O */
+.cell.x {
+    color: red;
+}
+
+.cell.o {
+    color: blue;
+}
+
+h1{
+    
+    font-size: 35px;
+}
